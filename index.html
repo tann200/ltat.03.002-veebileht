@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/common.css">
+    <title>Basic Guitar Setup & Maintenance</title>
+</head>
+<body>
+<header>
+    <nav aria-label="Main navigation">
+        <button id="home-btn" onclick="loadPage('main.html')" aria-label="Go to Home page" class="nav-btn">Home</button>
+        <button id="problems-btn" onclick="loadPage('common-problems.html')" aria-label="Go to Common problems page" class="nav-btn">Common Problems</button>
+        <button id="gallery-btn" onclick="loadPage('gallery.html')" aria-label="Go to Gallery page" class="nav-btn">Gallery</button>
+    </nav>
+</header>
+<main>
+    <iframe
+            id="content-frame"
+            class="responsive-frame"
+            src="main.html"
+            title="Page content"
+            width="100%"
+            style="border:none; display:block; margin:0 auto;"
+    ></iframe>
+</main>
+<script src="js/navigationScript.js"></script>
+</body>
+</html>

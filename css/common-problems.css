@@ -1,0 +1,12 @@
+.video-container {
+    text-align: left;
+    margin: 2em 0;
+}
+
+.video-iframe {
+    border-radius: 8px;
+}
+
+.nav-btn {
+    margin-right: 1em;
+}
