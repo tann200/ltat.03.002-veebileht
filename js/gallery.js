@@ -3,7 +3,8 @@ notifyParentOfPage('gallery.html');
 const imageList = [
     { src: 'images/trussrod adjustment.png', alt: 'Guitar trussrod adjustment' },
     { src: 'images/firstguitar.png', alt: 'Guitar strings too high' },
-    { src: 'images/tuning-pegs.png', alt: 'Tuning pegs' }
+    { src: 'images/tuning-pegs.png', alt: 'Tuning pegs' },
+    { src: 'images/trussrod.webp', alt: 'Trussrod diagram' }
 ];
 
 const gallery = document.getElementById('gallery');
