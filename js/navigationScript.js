@@ -1,18 +1,17 @@
 function loadPage(page) {
     const iframe = document.getElementById('content-frame');
+
+    if (!iframe) return;
+
+    updatePageTitleInstant(page);
+
+    setActiveNavButton(page);
+
+    iframe.onload = () => updatePageTitleFromIframe(iframe);
+
+    iframe.src = page;
+
     const navLinks = document.getElementById('nav-links');
-
-    if (iframe) {
-
-        updatePageTitleInstant(page);
-
-        setActiveNavButton(page);
-
-        iframe.onload = () => updatePageTitleFromIframe(iframe);
-
-        iframe.src = page;
-    }
-
     if (navLinks) navLinks.classList.remove('active');
 }
 
@@ -60,28 +59,26 @@ function updatePageTitleFromIframe(iframe) {
     if (!iframe || !titleElement) return;
 
     try {
-        const innerTitle = iframe.contentDocument.title || titleElement.textContent;
-        titleElement.textContent = innerTitle;
+        titleElement.textContent = iframe.contentDocument.title || titleElement.textContent;
     } catch (e) {
+        // Ignore cross-origin errors
     }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     const frame = document.getElementById('content-frame');
     const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
 
-    // Initial page title (fast)
     if (frame) {
         const currentPage = frame.src.split('/').pop();
         updatePageTitleInstant(currentPage);
         frame.onload = () => updatePageTitleFromIframe(frame);
     }
 
-    // Hamburger toggle
-    if (menuToggle && navLinks) {
+    if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks) navLinks.classList.toggle('active');
         });
     }
 });
