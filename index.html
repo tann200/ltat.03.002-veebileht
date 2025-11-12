@@ -1,32 +1,45 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Main Page</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/navbar.css">
-    </head>
-    <body>
-    <header>
-        <div class="navbar">
-            <span class="page-title" id="page-title">Home</span>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="navbar-title-row">
+            <span class="page-title" id="page-title">Guitar setup</span>
+        </div>
+        <div class="navbar-nav-row">
             <div class="menu-toggle" id="menu-toggle">
                 <div></div><div></div><div></div>
             </div>
-
             <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-                <button id="home-btn" class="nav-btn" onclick="loadPage('main.html')">Home</button>
-                <button id="problems-btn" class="nav-btn" onclick="loadPage('common-problems.html')">Common Problems</button>
-                <button id="gallery-btn" class="nav-btn" onclick="loadPage('gallery.html')">Gallery</button>
+                <button class="nav-btn" id = "home-btn" onclick="location.href='index.html'">Home</button>
+                <button class="nav-btn" id="problems-btn" onclick="location.href='common-problems.html'">Common Problems</button>
+                <button class="nav-btn" id="gallery-btn" onclick="location.href='gallery.html'">Gallery</button>
             </nav>
         </div>
-    </header>
-
-    <main>
-        <iframe id="content-frame" class="responsive-frame" src="main.html" title="Page content"></iframe>
-    </main>
-    <script src="js/navigationScript.js"></script>
-    </body>
-    </html>
+    </div>
+</header>
+<main>
+        <div class="card">
+            <h1>Have You ever felt that Your new guitar is unplayable?</h1>
+            <p>
+                If You have, then this website is dedicated to common problems affecting guitar playability and practical ways
+                to address them. Explore tips, solutions, and visual examples to help you get the best sound and feel from
+                your instrument.
+            </p>
+            <img src="images/frustrated-guitarist.png" alt="Frustrated guitar player" />
+        </div>
+</main>
+<script src="js/navigationScript.js"></script>
+<script>
+    setActiveNavButton('index.html');
+</script>
+</body>
+</html>

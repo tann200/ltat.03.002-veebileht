@@ -1,3 +1,25 @@
+.container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin: 1.2em auto 0 auto;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+    background: rgba(230, 249, 236, 0.6);
+    backdrop-filter: blur(0.5px);
+    border-radius: 1.2em;
+    box-shadow: 0 2px 16px rgba(34,46,54,0.07);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.container h1 {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 100%;
+}
 .image-overlay {
     position: fixed;
     top: 0;
@@ -12,6 +34,7 @@
     cursor: zoom-out;
     transition: opacity 0.3s ease;
     opacity: 0;
+    z-index: 1000;
 }
 
 .image-overlay.show {
@@ -24,16 +47,82 @@
     margin: auto;
     max-width: 90%;
     max-height: 90%;
-    width: auto;
-    height: auto;
     object-fit: contain;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-@media (max-width: 768px) {
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5em;
+    border-radius: 0.8em;
+    padding: 2em 1em;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-width: 220px;
+    height: auto;
+    overflow: hidden;
+    padding: 0.7em;
+    border-radius: 0.7em;
+    background: rgba(230, 249, 236, 0.6);
+    box-shadow: 0 2px 16px rgba(34,46,54,0.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    backdrop-filter: blur(2px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: zoom-in;
+}
+
+.gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5em;
+    box-shadow: none;
+    display: block;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(34, 46, 54, 0.15);
+}
+
+@media (max-width: 600px) {
     .image-overlay img {
-        max-width: 95%;
-        max-height: 95%;
+        max-width: 100vw;
+        max-height: 80vh;
+        width: auto;
+        height: auto;
+    }
+
+    .image-overlay {
+        padding: 0.5em;
+    }
+    .gallery-grid {
+        padding: 1em 0.5em;
+        gap: 1em;
+    }
+    .gallery-img {
+        max-width: 120px;
+        padding: 0.3em;
+        border-radius: 0.7em;
+    }
+    .gallery-img img {
+        border-radius: 0.5em;
+    }
+    .container {
+        max-width: 100vw;
+        padding: 1em 0.5em;
+        border-radius: 0.8em;
+        margin: 1em 0;
     }
 }
