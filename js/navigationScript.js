@@ -1,20 +1,22 @@
-function loadPage(page) {
-    const iframe = document.getElementById('content-frame');
-
-    if (!iframe) return;
-
-    updatePageTitleInstant(page);
-
-    setActiveNavButton(page);
-
-    iframe.onload = () => updatePageTitleFromIframe(iframe);
-
-    iframe.src = page;
-
+//See skript tegeleb lehe DOMI laadimise järel navigeerimisnupu aktiivseks seadistamise ja mobiilse menüü lülitamisega.
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
-    if (navLinks) navLinks.classList.remove('active');
-}
 
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Peida menüü, kui mõnele nav nupule klõpsatakse (mobiilivaade)
+        navLinks.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+});
+//Sea aktiivne navigeerimisnupp vastavalt praegusele lehele
 function setActiveNavButton(page) {
     const btnMap = {
         'main.html': 'home-btn',
@@ -39,46 +41,3 @@ function setActiveNavButton(page) {
         }
     }
 }
-
-function updatePageTitleInstant(page) {
-    const titleElement = document.getElementById('page-title');
-    if (!titleElement) return;
-
-    const quickTitles = {
-        'main.html': 'Home',
-        'index.html': 'Home',
-        'common-problems.html': 'Common Problems',
-        'gallery.html': 'Gallery'
-    };
-
-    titleElement.textContent = quickTitles[page] || 'Loading...';
-}
-
-function updatePageTitleFromIframe(iframe) {
-    const titleElement = document.getElementById('page-title');
-    if (!iframe || !titleElement) return;
-
-    try {
-        titleElement.textContent = iframe.contentDocument.title || titleElement.textContent;
-    } catch (e) {
-        // Ignore cross-origin errors
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const frame = document.getElementById('content-frame');
-    const menuToggle = document.getElementById('menu-toggle');
-
-    if (frame) {
-        const currentPage = frame.src.split('/').pop();
-        updatePageTitleInstant(currentPage);
-        frame.onload = () => updatePageTitleFromIframe(frame);
-    }
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            const navLinks = document.getElementById('nav-links');
-            if (navLinks) navLinks.classList.toggle('active');
-        });
-    }
-});

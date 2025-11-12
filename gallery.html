@@ -2,21 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gallery</title>
+    <title>Common problems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/gallery.css">
 </head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="navbar-title-row">
+            <span class="page-title" id="page-title">Gallery</span>
+        </div>
+        <div class="navbar-nav-row">
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div><div></div><div></div>
+            </div>
+            <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+                <button class="nav-btn" id = "home-btn" onclick="location.href='index.html'">Home</button>
+                <button class="nav-btn" id="problems-btn" onclick="location.href='common-problems.html'">Common Problems</button>
+                <button class="nav-btn" id="gallery-btn" onclick="location.href='gallery.html'">Gallery</button>
+            </nav>
+        </div>
+    </div>
+</header>
 <div class="image-overlay" id="imageOverlay">
     <img src="" alt="Zoomed image" id="overlayImg">
 </div>
-<body>
 <main>
-    <h1>Gallery of guitar setup related images</h1>
-    <section id="gallery" class="gallery-grid" aria-label="Image gallery"></section>
+    <div class="container">
+        <h1 tabindex="0">Gallery of guitar setup related images</h1>
+        <section id="gallery" class="gallery-grid" aria-label="Image gallery"></section>
+    </div>
 </main>
-
 <script src="js/navigationScript.js"></script>
-<script src="js/notifyparent.js"></script>
+<script>
+    setActiveNavButton('gallery.html');
+</script>
 <script src="js/gallery.js"></script>
 </body>
 </html>
