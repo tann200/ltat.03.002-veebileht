@@ -103,14 +103,27 @@ main {
         height:auto;
         flex-direction: column !important;
         flex-wrap: nowrap !important;
-        align-items: stretch !important;
+        align-items: center !important;
         gap: 1em !important;
-        width: 100vw !important;
+        width: 100%;
         overflow-x: hidden;
+
+
     }
     .card {
         height: auto;
-        min-height: calc(100vh - 80px);
+        width: 100%;
+        min-width: 0;
+        max-width: 400px;
+        min-height: calc(95vh - 80px);
         max-height: none;
     }
+    .video-container {
+        width: 100%;
+        min-height: 180px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        max-width: 100vw;
+    }
+
 }

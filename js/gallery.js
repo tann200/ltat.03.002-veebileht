@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funktsioon ülekatte peitmiseks
     function hideOverlay() {
         overlay.classList.remove('show');
-        overlayImg.src = '';
         overlayImg.alt = '';
     }
+
     //Iga pildi kohta käiakse list läbi ja luuakse galeriisse pildi element
     imageList.forEach(img => {
         const container = document.createElement('div');
