@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     //Nimekiri piltidest galeriis, mida saab täiendada
     const imageList = [
-        { src: 'images/trussrod-adjustment.png', alt: 'Guitar trussrod adjustment' },
-        { src: 'images/string-height-measure.png', alt: 'Guitar strings too high' },
+        { src: 'images/trussrod-adjustment.png', alt: 'Guitar-trussrod-adjustment' },
+        { src: 'images/string-height-measure.png', alt: 'Guitar-strings-too-high' },
         { src: 'images/tuning-pegs.png', alt: 'Tuning pegs' },
-        { src: 'images/guitar-neck-blueprint.png', alt: 'Guitar neck blueprint' },
-        { src: 'images/firstguitar.png', alt: 'First guitar' }
+        { src: 'images/guitar-neck-blueprint.png', alt: 'Guitar-neck-blueprint' },
+        { src: 'images/firstguitar.png', alt: 'First-guitar' }
     ];
 
     const gallery = document.getElementById('gallery');
