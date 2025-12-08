@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/videos.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="navbar-title-row">
+            <span class="page-title" id="page-title">Videos</span>
+        </div>
+        <div class="navbar-nav-row">
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div><div></div><div></div>
+            </div>
+            <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+                <button class="nav-btn" id="home-btn" data-href="index.html">Home</button>
+                <button class="nav-btn" id="videos-btn" data-href="videos.html">Videos</button>
+                <button class="nav-btn" id="gallery-btn" data-href="gallery.html">Gallery</button>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+        <div class="cards">
+            <div class="card card-intro">
+            <h2 tabindex="0">Funny Cat Videos</h2>
+            <ul>
+                <li>Silly kittens playing with toys</li>
+                <li>Grumpy cats being adorable</li>
+                <li>Cats knocking things off tables</li>
+                <li>Dancing cats and funny fails</li>
+                <li>Cute cat compilations</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2 tabindex="0">Top Funny Cat Videos</h2>
+            <div class="video-container">
+                <iframe
+                        src="https://www.youtube.com/embed/MLN6UU8GWHs"
+                        title="Funny cat video compilation"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="video-iframe"
+                ></iframe>
+            </div>
+            <p>
+                Hilarious compilation of the funniest cat videos on the internet. Prepare to laugh!
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 tabindex="0">Grumpy Cat Classics</h2>
+            <div class="video-container">
+                <iframe
+                        src="https://www.youtube.com/embed/INscMGmhmX4"
+                        title="Funny cat video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="video-iframe"
+                ></iframe>
+            </div>
+            <ul>
+                <li>Grumpy Cat's best moments</li>
+                <li>Why grumpy cats are the best</li>
+                <li>Adorable grumpy expressions</li>
+                <li>Funny cat reactions</li>
+                <li>Cat memes and more</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2 tabindex="0">Cats Being Goofy</h2>
+            <div class="video-container">
+                <iframe
+                        src="https://www.youtube.com/embed/3b9ZL4VQ8Uw"
+                        title="Funny cat video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="video-iframe"
+                ></iframe>
+            </div>
+            <p>
+                Watch cats doing the silliest things. From knocking things over to dancing awkwardly!
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 tabindex="0">Kitten Chaos</h2>
+            <div class="video-container">
+                <iframe
+                        src="https://www.youtube.com/embed/hY7m5jjJ9mM"
+                        title="Funny cat video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="video-iframe"
+                ></iframe>
+            </div>
+            <p>
+                Adorable kittens causing chaos and cuteness overload. Too cute to handle!
+            </p>
+        </div>
+    </div>
+</main>
+<script src="js/navigationScript.js"></script>
+<script>
+    setActiveNavButton('videos.html');
+</script>
+</body>
+</html>
