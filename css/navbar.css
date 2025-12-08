@@ -61,13 +61,20 @@ header {
 
 .nav-btn {
     font-size: 0.9rem;
-    padding: 0.5em 1em;
+    padding: 0.75em 1.5em;
     border-radius: 0.3em;
     border: none;
     color: #222e36;
     cursor: pointer;
     background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
     transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.nav-btn:focus {
+    outline: 2px solid #185a9d;
+    outline-offset: 2px;
 }
 
 .nav-btn:hover:enabled {
@@ -91,6 +98,14 @@ header {
     gap: 4px;
     cursor: pointer;
     margin-right: 1em;
+    padding: 10px;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.menu-toggle:focus {
+    outline: 2px solid #185a9d;
+    outline-offset: 2px;
 }
 
 .menu-toggle div {

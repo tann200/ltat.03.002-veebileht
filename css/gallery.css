@@ -52,6 +52,11 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+.image-overlay img:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
