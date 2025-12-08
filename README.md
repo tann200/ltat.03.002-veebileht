@@ -15,3 +15,4 @@ See kontrollib W3C standardite järgi HTML5 kehtivust ja aitab tagada koodi kval
 
 Töövoog kasutab `html5validator-action` tööriista, mis skannerib üle projekti
 kõiki html faile HTML ja kuvab hoiatused/vead logis.
+
